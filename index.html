@@ -3,315 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Portal | Global Operations Group Ltd.</title>
+    <title>Remote Job Opportunity</title>
     <style>
-        :root {
-            --primary-bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --brand-color: #2563eb;
-            --brand-hover: #1d4ed8;
-            --border-color: #e2e8f0;
-            --success: #16a34a;
-            --urgent-color: #e63946;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        /* Global Styles */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #0d1117; /* Premium Dark Background */
+            color: #c9d1d9; /* Light Text Color */
+            margin: 0;
             padding: 20px;
         }
 
-        .job-portal-wrapper {
-            width: 100%;
-            max-width: 900px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .premium-job-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-            width: 100%;
-            display: flex;
-            overflow: hidden;
-        }
-
-        /* Left Side: Media Asset Integration */
-        .portal-media-box {
-            flex: 1;
-            background-color: #f0fdf4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 25px;
-            position: relative;
-            border-right: 1px solid var(--border-color);
-        }
-
-        .portal-media-box a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-        }
-
-        .urgent-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: var(--urgent-color);
-            color: #ffffff;
-            padding: 5px 12px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.2);
-            z-index: 5;
-        }
-
-        .portal-media-box img {
-            width: 100%;
-            height: 100%;
-            max-height: 380px;
-            object-fit: contain;
+        /* Main Job Card */
+        .job-card {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #161b22; /* Card Background */
+            padding: 35px;
             border-radius: 12px;
-            display: block;
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.04));
-            transition: transform 0.2s ease-in-out;
+            border: 1px solid #30363d;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
 
-        .portal-media-box img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Right Side: Information Panel */
-        .portal-content-box {
-            flex: 1.25;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .portal-click-layer {
-            text-decoration: none !important;
-            color: inherit !important;
-            display: block;
-        }
-
-        .portal-header-wrapper {
+        /* Header Layout */
+        .header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .portal-company-logo {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #3b82f6, var(--brand-color));
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
-        }
-
-        .portal-company-meta {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .portal-company-name {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: 0.3px;
-        }
-
-        .portal-verification {
-            font-size: 0.75rem;
-            color: var(--success);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: 1px;
-        }
-
-        .portal-job-title {
-            font-size: 1.9rem;
-            color: var(--text-main);
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 18px;
-            letter-spacing: -0.5px;
-        }
-
-        .portal-badge-row {
-            display: flex;
-            gap: 8px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 20px;
             margin-bottom: 25px;
+        }
+
+        /* Logo/Image Styling */
+        .logo-img {
+            width: 65px;
+            height: 65px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 20px;
+            background-color: #21262d; /* Fallback background if image fails to load */
+            border: 1px solid #30363d;
+        }
+
+        /* Typography */
+        .job-title {
+            font-size: 26px;
+            margin: 0 0 5px 0;
+            color: #f0f6fc;
+        }
+
+        .company {
+            font-size: 16px;
+            color: #8b949e;
+            margin: 0;
+        }
+
+        /* Badges / Tags */
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
         }
 
-        .portal-badge {
+        .tag {
+            background: #21262d;
+            color: #c9d1d9;
             padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .badge-success {
-            background-color: #f0fdf4;
-            color: var(--success);
-            border: 1px solid #bbf7d0;
-        }
-
-        .badge-neutral {
-            background-color: #f1f5f9;
-            color: var(--text-muted);
-            border: 1px solid #e2e8f0;
-        }
-
-        .portal-info-table {
-            margin-bottom: 30px;
-        }
-
-        .portal-info-row {
-            display: flex;
-            padding: 10px 0;
-            font-size: 0.95rem;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-
-        .portal-info-row:last-child {
-            border-bottom: none;
-        }
-
-        .portal-info-label {
-            font-weight: 600;
-            width: 140px;
-            color: #64748b;
-            flex-shrink: 0;
-        }
-
-        .portal-info-value {
-            color: var(--text-main);
-            flex: 1;
+            border-radius: 6px;
+            font-size: 14px;
             font-weight: 500;
+            border: 1px solid #30363d;
         }
 
-        .portal-info-value.salary {
-            color: var(--success);
-            font-weight: 700;
+        .tag.highlight {
+            background: rgba(56, 139, 253, 0.15);
+            color: #58a6ff;
+            border: 1px solid rgba(56, 139, 253, 0.4);
         }
 
-        .portal-action-btn {
+        /* Job Details Sections */
+        .details-section {
+            margin-bottom: 25px;
+        }
+
+        .details-section h3 {
+            font-size: 18px;
+            color: #f0f6fc;
+            margin-bottom: 12px;
+        }
+
+        .details-section ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .details-section li {
+            margin-bottom: 10px;
+        }
+
+        /* Call To Action Button */
+        .apply-btn {
             display: block;
             width: 100%;
-            background-color: var(--text-main);
-            color: #ffffff !important;
+            background-color: #238636; /* Professional Green */
+            color: #ffffff;
             text-align: center;
-            padding: 16px 30px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            border-radius: 10px;
-            text-decoration: none !important;
-            transition: all 0.2s ease-in-out;
-            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+            padding: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: background 0.2s;
+            margin-top: 30px;
+            border: 1px solid rgba(240, 246, 252, 0.1);
         }
 
-        .portal-action-btn:hover {
-            background-color: var(--brand-color);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
-        }
-
-        /* Mobile Viewports */
-        @media (max-width: 768px) {
-            .premium-job-card {
-                flex-direction: column;
-            }
-            .portal-media-box {
-                border-right: none;
-                border-bottom: 1px solid var(--border-color);
-                padding: 30px 20px 20px 20px;
-            }
-            .portal-media-box img {
-                max-height: 250px;
-            }
-            .portal-content-box {
-                padding: 35px 20px;
-            }
-            .portal-job-title {
-                font-size: 1.6rem;
-            }
+        .apply-btn:hover {
+            background-color: #2ea043;
         }
     </style>
 </head>
 <body>
 
-    <div class="job-portal-wrapper">
-        <div class="premium-job-card">
-            
-            <!-- Left Side Image Layer -->
-            <div class="portal-media-box">
-                <span class="urgent-badge">Urgent Hiring</span>
-                <a href="https://effectivecpmnetwork.com" target="_blank" rel="noopener noreferrer">
-                    <img src="https://iconscout.com" alt="Remote Job Operations Environment">
-                </a>
-            </div>
+<div class="job-card">
+    
+    <!-- Company Header & Logo -->
+    <div class="header">
+        <!-- Replace the placeholder URL inside src="..." with your actual online image link -->
+        <img src="https://placeholder.com" alt="Company Logo" class="logo-img">
+        <div>
+            <h1 class="job-title">Remote Front-End Developer</h1>
+            <p class="company">Digital Experts Ltd.</p>
+        </div>
+    </div>
 
-            <!-- Right Side Information Framework -->
-            <div class="portal-content-box">
-                
-                <!-- Masked Top Layer Link -->
-                <a href="https://effectivecpmnetwork.com" target="_blank" rel="noopener noreferrer" class="portal-click-layer">
-                    <div class="portal-header-wrapper">
-                        <div class="portal-company-logo">GO</div>
-                        <div class="portal-company-meta">
-                            <span class="portal-company-name">Global Operations Group Ltd.</span>
-                            <span class="portal-verification">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                                Verified Employer
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <h1 class="portal-job-title">Online Remote Assistant</h1>
-                </a>
+    <!-- Job Information Badges -->
+    <div class="tags">
+        <span class="tag highlight">🌍 100% Remote (Work from Home)</span>
+        <span class="tag">⏱ Full-Time</span>
+        <span class="tag highlight">💰 Salary: High Competitive</span>
+    </div>
 
-                <div class="portal-badge-row">
-                    <span class="portal-badge badge-success">🏠 100% Home Based Job</span>
-                    <span class="portal-badge badge-neutral">💼 Entry Level Opportunity</span>
-                    <span class="portal-badge badge-neutral">⏱️ Flexible Shift</span>
-                </div>
+    <!-- Benefits Section -->
+    <div class="details-section">
+        <h3>Benefits & Perks:</h3>
+        <ul>
+            <li>Flexible working hours with complete location independence.</li>
+            <li>Work with a modern technology stack and supportive international team.</li>
+            <li>Competitive compensation with performance-based bonuses.</li>
+        </ul>
+    </div>
 
-                <div class="portal-info-table">
-                    <div class="portal-info-row">
-                        <div class="portal-info-label">Division:</div>
-                        <div class="portal-info-value">Administrative &amp; Data Systems</div>
-                    </div>
-                    <div class="portal-info-row">
+    <!-- Requirements Section -->
+    <div class="details-section">
+        <h3>Requirements:</h3>
+        <ul>
+            <li>Good understanding of responsive design, HTML, CSS, and UI components.</li>
+            <li>Ability to manage source code using basic Git version control workflows.</li>
+            <li>Self-motivated individual capable of meeting project deadlines.</li>
+        </ul>
+    </div>
+
+    <!-- Interactive Apply Button with your link -->
+    <a href="https://effectivecpmnetwork.com" class="apply-btn">Apply Now</a>
+
+</div>
+
+</body>
+</html>

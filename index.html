@@ -1,62 +1,286 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Remote Assistant</title>
-</head>
-<body style="font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; display: flex; justify-content: center;">
+<div class="job-portal-container">
+    <style>
+        .job-portal-container {
+            --primary-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --brand-color: #0284c7;
+            --brand-hover: #0369a1;
+            --border-color: #e2e8f0;
+            
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-bg);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
 
-    <!-- Job Post Container -->
-    <div style="width: 100%; max-width: 500px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden;">
+        .job-portal-container * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-portal-container a {
+            text-decoration: none !important;
+            color: inherit;
+            display: block;
+        }
+
+        .premium-job-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            max-width: 850px;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* Left Media Section */
+        .portal-media-box {
+            flex: 1;
+            background-color: #f0fdf4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .portal-media-box img {
+            width: 100%;
+            height: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        /* Right Content Section */
+        .portal-content-box {
+            flex: 1.25;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Real Company Header with Dynamic Click Layer */
+        .portal-header-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .portal-company-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff !important;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.2);
+        }
+
+        .portal-company-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portal-company-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: 0.3px;
+        }
+
+        .portal-verification {
+            font-size: 0.75rem;
+            color: #16a34a;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-top: 1px;
+        }
+
+        .portal-job-title {
+            font-size: 1.9rem;
+            color: var(--text-main) !important;
+            font-weight: 800;
+            line-height: 1.25;
+            margin: 0 0 18px 0 !important;
+            letter-spacing: -0.5px;
+        }
+
+        /* Verified Badges */
+        .portal-badge-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .portal-badge {
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background-color: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .badge-neutral {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Meta Job Details */
+        .portal-info-table {
+            margin-bottom: 30px;
+        }
+
+        .portal-info-row {
+            display: flex;
+            padding: 8px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed #f1f5f9;
+        }
         
-        <!-- Image & Adsterra Link Section -->
-        <div style="width: 100%; position: relative;">
-            <a href="https://effectivecpmnetwork.com" target="_blank" style="text-decoration: none; display: block;">
-                
-                <!-- Urgent Hiring Badge -->
-                <span style="position: absolute; top: 15px; left: 15px; background-color: #e63946; color: white; padding: 5px 12px; font-size: 12px; font-weight: bold; border-radius: 20px; text-transform: uppercase; z-index: 10;">
-                    Urgent Hiring
-                </span>
-                
-                <!-- Live Image From Internet -->
-                <img src="https://unsplash.com" 
-                     alt="Remote Job Office" 
-                     style="width: 100%; height: auto; display: block; object-fit: cover;">
+        .portal-info-row:last-child {
+            border-bottom: none;
+        }
+
+        .portal-info-label {
+            font-weight: 600;
+            width: 140px;
+            color: #64748b;
+            flex-shrink: 0;
+        }
+
+        .portal-info-value {
+            color: var(--text-main);
+            flex: 1;
+            font-weight: 500;
+        }
+
+        /* High CTR Action Button */
+        .portal-action-btn {
+            background-color: var(--text-main);
+            color: #ffffff !important;
+            text-align: center;
+            padding: 15px 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+        }
+
+        .portal-action-btn:hover {
+            background-color: var(--brand-color);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.25);
+        }
+
+        /* Mobile View Optimization */
+        @media (max-width: 768px) {
+            .premium-job-card {
+                flex-direction: column;
+            }
+            .portal-media-box {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 15px;
+            }
+            .portal-media-box img {
+                max-height: 260px;
+            }
+            .portal-content-box {
+                padding: 30px 20px;
+            }
+            .portal-job-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+
+    <div class="premium-job-card">
+        <!-- 1. LEFT SIDE IMAGE (Clickable Ads Layer) -->
+        <div class="portal-media-box">
+            <a href="YOUR_ADSTERRA_DIRECT_LINK_HERE" target="_blank" rel="noopener noreferrer">
+                <img src="https://unsplash.com" alt="Global Operations Recruitment Shared Workspace">
             </a>
         </div>
 
-        <!-- Job Details Content -->
-        <div style="padding: 25px;">
-            <p style="color: #2ec4b6; font-weight: bold; margin: 0 0 10px 0; font-size: 14px;">● Positions Open Today • No Experience Required</p>
-            <h2 style="color: #011627; margin: 0 0 5px 0; font-size: 22px; font-weight: bold;">Online Remote Assistant (Entry Level)</h2>
-            <p style="color: #707070; margin: 0 0 20px 0; font-size: 14px;">Global Operations Group Ltd.</p>
-
-            <!-- Info Boxes -->
-            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-                <div style="flex: 1; background: #f8f9fa; padding: 10px; border-radius: 8px; text-align: center; border: 1px solid #edf2f7;">
-                    <span style="font-size: 11px; text-transform: uppercase; color: #a0aec0; display: block; font-weight: bold;">Hourly Compensation</span>
-                    <span style="font-size: 16px; color: #2ec4b6; font-weight: bold;">$35.00 - $50.00 / hr</span>
+        <!-- RIGHT SIDE COMPREHENSIVE JOB INFO -->
+        <div class="portal-content-box">
+            
+            <!-- 2. COMPANY LOGO & NAME (Clickable Ads Layer) -->
+            <a href="YOUR_ADSTERRA_DIRECT_LINK_HERE" target="_blank" rel="noopener noreferrer" class="portal-header-wrapper">
+                <div class="portal-company-logo">GO</div>
+                <div class="portal-company-meta">
+                    <span class="portal-company-name">Global Operations Group Ltd.</span>
+                    <span class="portal-verification">✓ Verified Employer</span>
                 </div>
-                <div style="flex: 1; background: #f8f9fa; padding: 10px; border-radius: 8px; text-align: center; border: 1px solid #edf2f7;">
-                    <span style="font-size: 11px; text-transform: uppercase; color: #a0aec0; display: block; font-weight: bold;">Job Nature</span>
-                    <span style="font-size: 16px; color: #011627; font-weight: bold;">100% Home Based</span>
+            </a>
+            
+            <!-- 3. JOB TITLE (Clickable Ads Layer) -->
+            <a href="YOUR_ADSTERRA_DIRECT_LINK_HERE" target="_blank" rel="noopener noreferrer">
+                <h2 class="portal-job-title">Online Remote Assistant</h2>
+            </a>
+            
+            <!-- Badges -->
+            <div class="portal-badge-row">
+                <span class="portal-badge badge-success">🏠 100% Remote / Work From Home</span>
+                <span class="portal-badge badge-neutral">💼 No Experience Required</span>
+                <span class="portal-badge badge-neutral">⏱️ Flexible Shift</span>
+            </div>
+
+            <!-- Detailed Specifications Table -->
+            <div class="portal-info-table">
+                <div class="portal-info-row">
+                    <div class="portal-info-label">Department:</div>
+                    <div class="portal-info-value">Global Administrative Operations</div>
+                </div>
+                <div class="portal-info-row">
+                    <div class="portal-info-label">Employment:</div>
+                    <div class="portal-info-value">Full-Time / Part-Time Positions</div>
+                </div>
+                <div class="portal-info-row">
+                    <div class="portal-info-label">Estimated Salary:</div>
+                    <div class="portal-info-value" style="color: #16a34a; font-weight: 700;">$24.50 - $42.00 / Hour</div>
+                </div>
+                <div class="portal-info-row">
+                    <div class="portal-info-label">Basic Tasks:</div>
+                    <div class="portal-info-value">Data verification, email processing, and schedule management.</div>
                 </div>
             </div>
 
-            <p style="color: #4a5568; font-size: 14px; line-height: 1.6; margin-0 0 20px 0;">
-                We are actively seeking international individuals to fill immediate home-based flexible slots. Your primary tasks involve standard data entry, social media text evaluation, and basic feedback reports. Work at your own pace from anywhere.
-            </p>
-
-            <p style="color: #4a5568; font-size: 14px; font-weight: bold; margin-bottom: 25px;">✓ Choose your own hours (Part-Time / Full-Time)</p>
-
-            <!-- Big Apply Button linked to Adsterra -->
-            <a href="https://effectivecpmnetwork.com" target="_blank" 
-               style="display: block; background: #2ec4b6; color: white; text-align: center; padding: 14px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 6px rgba(46, 196, 182, 0.2);">
-                Start Instant Application
+            <!-- 4. MAIN ACTION APPLY BUTTON (Clickable Ads Layer) -->
+            <a href="YOUR_ADSTERRA_DIRECT_LINK_HERE" target="_blank" rel="noopener noreferrer" class="portal-action-btn">
+                Apply For This Position Now
             </a>
         </div>
     </div>
-
-</body>
-</html>
+</div>

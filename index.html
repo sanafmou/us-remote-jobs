@@ -3,174 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remote Job Opportunity</title>
+    <title>Global Operations Group Ltd. - Careers</title>
     <style>
-        /* Global Styles */
+        /* Modern reset and fonts */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #0d1117; /* Premium Dark Background */
-            color: #c9d1d9; /* Light Text Color */
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
             margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* Main Job Card */
-        .job-card {
-            max-width: 700px;
-            margin: 40px auto;
-            background: #161b22; /* Card Background */
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid #30363d;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        /* High-quality layout container */
+        .job-container {
+            display: flex;
+            max-width: 850px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
         }
 
-        /* Header Layout */
-        .header {
+        /* Left Branding Panel */
+        .left-panel {
+            flex: 1;
+            background-color: #f0fdf4; /* Very soft premium green */
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .urgent-tag {
+            background-color: #ef4444;
+            color: #ffffff;
+            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .department-title {
+            font-size: 18px;
+            color: #2563eb; /* Corporate blue */
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Right Content Panel */
+        .right-panel {
+            flex: 1.6;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Company branding row */
+        .company-header {
             display: flex;
             align-items: center;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
-        /* Logo/Image Styling */
-        .logo-img {
-            width: 65px;
-            height: 65px;
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            background-color: #2563eb;
+            color: #ffffff;
             border-radius: 10px;
-            object-fit: cover;
-            margin-right: 20px;
-            background-color: #21262d; /* Fallback background if image fails to load */
-            border: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin-right: 15px;
         }
 
-        /* Typography */
-        .job-title {
-            font-size: 26px;
-            margin: 0 0 5px 0;
-            color: #f0f6fc;
-        }
-
-        .company {
-            font-size: 16px;
-            color: #8b949e;
+        .company-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
             margin: 0;
         }
 
-        /* Badges / Tags */
-        .tags {
+        .verified-status {
+            font-size: 13px;
+            color: #16a34a;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        /* Premium Job Title typography */
+        .job-title {
+            font-size: 32px;
+            color: #0f172a;
+            margin: 10px 0 25px 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* Professional Metadata Tags */
+        .tags-wrapper {
             display: flex;
             gap: 10px;
-            margin-bottom: 30px;
             flex-wrap: wrap;
+            margin-bottom: 35px;
         }
 
-        .tag {
-            background: #21262d;
-            color: #c9d1d9;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 14px;
+        .badge {
+            background-color: #f1f5f9;
+            color: #475569;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
             font-weight: 500;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
         }
 
-        .tag.highlight {
-            background: rgba(56, 139, 253, 0.15);
-            color: #58a6ff;
-            border: 1px solid rgba(56, 139, 253, 0.4);
+        .badge.green {
+            background-color: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
         }
 
-        /* Job Details Sections */
-        .details-section {
-            margin-bottom: 25px;
+        .badge.purple {
+            background-color: #f5f3ff;
+            color: #5b21b6;
+            border-color: #ddd6fe;
         }
 
-        .details-section h3 {
-            font-size: 18px;
-            color: #f0f6fc;
-            margin-bottom: 12px;
+        /* Clean Footer Divider Layout */
+        .division-footer {
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #64748b;
         }
 
-        .details-section ul {
-            padding-left: 20px;
-            margin: 0;
+        .division-footer strong {
+            color: #1e293b;
         }
 
-        .details-section li {
-            margin-bottom: 10px;
-        }
-
-        /* Call To Action Button */
-        .apply-btn {
-            display: block;
-            width: 100%;
-            background-color: #238636; /* Professional Green */
+        /* Premium Call-to-Action Button with Icon placement */
+        .apply-now-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #16a34a; /* High-conversion green */
             color: #ffffff;
-            text-align: center;
-            padding: 14px;
+            padding: 16px 32px;
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 700;
             text-decoration: none;
-            border-radius: 6px;
-            box-sizing: border-box;
-            transition: background 0.2s;
-            margin-top: 30px;
-            border: 1px solid rgba(240, 246, 252, 0.1);
+            border-radius: 8px;
+            gap: 12px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
         }
 
-        .apply-btn:hover {
-            background-color: #2ea043;
+        .apply-now-btn:hover {
+            background-color: #15803d;
+        }
+
+        .apply-now-btn:active {
+            transform: scale(0.99);
+        }
+
+        /* Styling for the image inside the button */
+        .btn-icon-img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        /* Responsive adaptation for small viewports */
+        @media (max-width: 650px) {
+            .job-container {
+                flex-direction: column;
+            }
+            .left-panel {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 30px;
+            }
+            .right-panel {
+                padding: 30px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="job-card">
-    
-    <!-- Company Header & Logo -->
-    <div class="header">
-        <!-- Replace the placeholder URL inside src="..." with your actual online image link -->
-        <img src="https://placeholder.com" alt="Company Logo" class="logo-img">
-        <div>
-            <h1 class="job-title">Remote Front-End Developer</h1>
-            <p class="company">Digital Experts Ltd.</p>
+    <div class="job-container">
+        
+        <!-- Left Column: Branding details -->
+        <div class="left-panel">
+            <div class="urgent-tag">Urgent Hiring</div>
+            <p class="department-title">Operations Environment</p>
         </div>
+
+        <!-- Right Column: Main Job specifications -->
+        <div class="right-panel">
+            
+            <div class="company-header">
+                <div class="company-logo">GO</div>
+                <div>
+                    <h2 class="company-name">Global Operations Group Ltd.</h2>
+                    <div class="verified-status">✓ Verified Employer</div>
+                </div>
+            </div>
+
+            <h1 class="job-title">Online Remote Assistant</h1>
+
+            <div class="tags-wrapper">
+                <span class="badge green">🏡 100% Home Based Job</span>
+                <span class="badge">💼 Entry Level Opportunity</span>
+                <span class="badge purple">⏱ Flexible Shift</span>
+            </div>
+
+            <div class="division-footer">
+                <span>Division:</span>
+                <span><strong>Administrative & Data Systems</strong></span>
+            </div>
+
+            <!-- Premium Button containing your exact tracking link -->
+            <a href="https://effectivecpmnetwork.com" class="apply-now-btn" target="_blank">
+                <!-- Replace this src placeholder with your actual direct image/icon link if needed -->
+                <img src="https://placeholder.com" alt="" class="btn-icon-img">
+                Apply Now
+            </a>
+
+        </div>
+
     </div>
-
-    <!-- Job Information Badges -->
-    <div class="tags">
-        <span class="tag highlight">🌍 100% Remote (Work from Home)</span>
-        <span class="tag">⏱ Full-Time</span>
-        <span class="tag highlight">💰 Salary: High Competitive</span>
-    </div>
-
-    <!-- Benefits Section -->
-    <div class="details-section">
-        <h3>Benefits & Perks:</h3>
-        <ul>
-            <li>Flexible working hours with complete location independence.</li>
-            <li>Work with a modern technology stack and supportive international team.</li>
-            <li>Competitive compensation with performance-based bonuses.</li>
-        </ul>
-    </div>
-
-    <!-- Requirements Section -->
-    <div class="details-section">
-        <h3>Requirements:</h3>
-        <ul>
-            <li>Good understanding of responsive design, HTML, CSS, and UI components.</li>
-            <li>Ability to manage source code using basic Git version control workflows.</li>
-            <li>Self-motivated individual capable of meeting project deadlines.</li>
-        </ul>
-    </div>
-
-    <!-- Interactive Apply Button with your link -->
-    <a href="https://effectivecpmnetwork.com" class="apply-btn">Apply Now</a>
-
-</div>
 
 </body>
 </html>

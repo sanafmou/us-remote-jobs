@@ -3,239 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remote Work Opportunity | Global Careers</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        body {
-            background-color: #f3f4f6;
-            color: #1f2937;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .job-card {
-            background: #ffffff;
-            max-width: 500px;
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            border: 1px solid #e5e7eb;
-        }
-        .image-container {
-            width: 100%;
-            height: 230px;
-            position: relative;
-            background-color: #e5e7eb;
-        }
-        .job-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: #ef4444;
-            color: white;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 6px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-        }
-        .content {
-            padding: 25px;
-        }
-        .meta-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            color: #4b5563;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #10b981;
-            border-radius: 50%;
-            display: inline-block;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-        }
-        .job-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: #111827;
-            line-height: 1.2;
-            margin-bottom: 8px;
-        }
-        .company-name {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 22px;
-        }
-        .stat-box {
-            background: #f8fafc;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #f1f5f9;
-            text-align: center;
-        }
-        .stat-label {
-            font-size: 10px;
-            color: #64748b;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 4px;
-            letter-spacing: 0.5px;
-        }
-        .stat-value {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0f172a;
-        }
-        .stat-value.green {
-            color: #059669;
-        }
-        .description {
-            font-size: 14px;
-            color: #4b5563;
-            line-height: 1.6;
-            margin-bottom: 22px;
-        }
-        .features-list {
-            margin-bottom: 25px;
-        }
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13.5px;
-            color: #374151;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        .feature-icon {
-            color: #2563eb;
-            font-weight: bold;
-        }
-        .btn-container {
-            text-align: center;
-        }
-        .apply-btn {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 700;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.7px;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
-            transition: all 0.2s ease;
-        }
-        .apply-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-        }
-        .btn-note {
-            font-size: 11px;
-            color: #9ca3af;
-            margin-top: 10px;
-        }
-    </style>
+    <title>Online Remote Assistant</title>
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; display: flex; justify-content: center;">
 
-    <div class="job-card">
-        <!-- Professional Work From Home Image -->
-        <div class="image-container">
-            <span class="badge">Urgent Hiring</span>
-            <img src="https://unsplash.com" alt="Remote Job Office" class="job-image">
+    <!-- Job Post Container -->
+    <div style="width: 100%; max-width: 500px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden;">
+        
+        <!-- Image & Adsterra Link Section -->
+        <div style="width: 100%; position: relative;">
+            <a href="https://effectivecpmnetwork.com" target="_blank" style="text-decoration: none; display: block;">
+                
+                <!-- Urgent Hiring Badge -->
+                <span style="position: absolute; top: 15px; left: 15px; background-color: #e63946; color: white; padding: 5px 12px; font-size: 12px; font-weight: bold; border-radius: 20px; text-transform: uppercase; z-index: 10;">
+                    Urgent Hiring
+                </span>
+                
+                <!-- Live Image From Internet -->
+                <img src="https://unsplash.com" 
+                     alt="Remote Job Office" 
+                     style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </a>
         </div>
 
-        <div class="content">
-            <!-- Meta Info -->
-            <div class="meta-info">
-                <span class="status-dot"></span>
-                <span>Positions Open Today</span>
-                <span>•</span>
-                <span>No Experience Required</span>
-            </div>
+        <!-- Job Details Content -->
+        <div style="padding: 25px;">
+            <p style="color: #2ec4b6; font-weight: bold; margin: 0 0 10px 0; font-size: 14px;">● Positions Open Today • No Experience Required</p>
+            <h2 style="color: #011627; margin: 0 0 5px 0; font-size: 22px; font-weight: bold;">Online Remote Assistant (Entry Level)</h2>
+            <p style="color: #707070; margin: 0 0 20px 0; font-size: 14px;">Global Operations Group Ltd.</p>
 
-            <!-- Job Title -->
-            <h1 class="job-title">Online Remote Assistant (Entry Level)</h1>
-            <p class="company-name">Global Operations Group Ltd.</p>
-
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <p class="stat-label">Hourly Compensation</p>
-                    <p class="stat-value green">$35.00 - $50.00 / hr</p>
+            <!-- Info Boxes -->
+            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                <div style="flex: 1; background: #f8f9fa; padding: 10px; border-radius: 8px; text-align: center; border: 1px solid #edf2f7;">
+                    <span style="font-size: 11px; text-transform: uppercase; color: #a0aec0; display: block; font-weight: bold;">Hourly Compensation</span>
+                    <span style="font-size: 16px; color: #2ec4b6; font-weight: bold;">$35.00 - $50.00 / hr</span>
                 </div>
-                <div class="stat-box">
-                    <p class="stat-label">Job Nature</p>
-                    <p class="stat-value">100% Home Based</p>
+                <div style="flex: 1; background: #f8f9fa; padding: 10px; border-radius: 8px; text-align: center; border: 1px solid #edf2f7;">
+                    <span style="font-size: 11px; text-transform: uppercase; color: #a0aec0; display: block; font-weight: bold;">Job Nature</span>
+                    <span style="font-size: 16px; color: #011627; font-weight: bold;">100% Home Based</span>
                 </div>
             </div>
 
-            <!-- Description -->
-            <p class="description">
+            <p style="color: #4a5568; font-size: 14px; line-height: 1.6; margin-0 0 20px 0;">
                 We are actively seeking international individuals to fill immediate home-based flexible slots. Your primary tasks involve standard data entry, social media text evaluation, and basic feedback reports. Work at your own pace from anywhere.
             </p>
 
-            <!-- Highlights -->
-            <div class="features-list">
-                <div class="feature-item"><span class="feature-icon">✔</span> Choose your own hours (Part-Time / Full-Time)</div>
-                <div class="feature-item"><span class="feature-icon">✔</span> Fully compatible with Smartphones, Tablets, or Laptops</div>
-                <div class="feature-item"><span class="feature-icon">✔</span> Weekly payouts directly sent via international portals</div>
-            </div>
+            <p style="color: #4a5568; font-size: 14px; font-weight: bold; margin-bottom: 25px;">✓ Choose your own hours (Part-Time / Full-Time)</p>
 
-            <!-- Action Button Linked To Your Secure Encoded Direct Link -->
-            <div class="btn-container">
-                <button class="apply-btn" onclick="openSecureForm()">👉 Start Instant Application</button>
-                <p class="btn-note">Secured application portal • Registration takes less than 2 minutes</p>
-            </div>
+            <!-- Big Apply Button linked to Adsterra -->
+            <a href="https://effectivecpmnetwork.com" target="_blank" 
+               style="display: block; background: #2ec4b6; color: white; text-align: center; padding: 14px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 6px rgba(46, 196, 182, 0.2);">
+                Start Instant Application
+            </a>
         </div>
     </div>
-
-    <!-- Secret Javascript Gateway (Base64 Security) -->
-    <script>
-        function openSecureForm() {
-            // Your exact Adsterra encoded link from screenshot
-            var secureHash = "aHR0cHM6Ly93d3cuZWZmZWN0aXZlY3BtbmV0d29yay5jb20vdHNxNTdmNmR6P2tleT1kMjM2ZGEyNWM0ZTE3NDgyMjBkN2NkMzg4YTAwOTg5MA==";
-            
-            // Decodes and opens your direct link safely on user click
-            window.open(atob(secureHash), '_blank');
-        }
-    </script>
 
 </body>
 </html>
